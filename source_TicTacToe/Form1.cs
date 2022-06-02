@@ -2,7 +2,8 @@ namespace Tic_Tac_Toe
 {
     public partial class Form1 : Form
     {
-        int playerturn = 0;
+        int playerturn = 0; //determines visible buttons, turn-selection for AI in Single-Player Mode, and win condition message.
+        bool isSinglePlayer = false;    //is for disabling or enabling AI to respond to every button click.
         public Form1()
         {
             InitializeComponent();
@@ -13,6 +14,8 @@ namespace Tic_Tac_Toe
             }
             if (result == DialogResult.No)
             {
+                isSinglePlayer = true;  //turns on AI
+
                 Random rnd = new Random();
                 int firstturn = rnd.Next(9);
                 playerturn = +firstturn;
@@ -296,6 +299,7 @@ namespace Tic_Tac_Toe
                     if (result == DialogResult.Yes)
                     {
                         Application.Restart();
+                        Environment.Exit(0);
                     }
                     else
                     {
@@ -310,6 +314,7 @@ namespace Tic_Tac_Toe
                     if (result == DialogResult.Yes)
                     {
                         Application.Restart();
+                        Environment.Exit(0);
                     }
                     else
                     {
@@ -317,25 +322,188 @@ namespace Tic_Tac_Toe
                     }
                 }
             }
+
+            //Vertical Condition
+            if (((richTextBox1.Text == richTextBox4.Text) && (richTextBox4.Text == richTextBox7.Text) && (richTextBox4.Text != "")) || ((richTextBox2.Text == richTextBox5.Text) && (richTextBox5.Text == richTextBox8.Text) && (richTextBox5.Text != "")) || ((richTextBox3.Text == richTextBox6.Text) && (richTextBox6.Text == richTextBox9.Text) && (richTextBox6.Text != "")))
+            {
+                if ((playerturn % 2) == 0)
+                {
+                    var winner = "X";
+
+                    var result = MessageBox.Show("Congratulations! " + "Player " + winner + " wins.\n" + "\nWould you like to play again?", "Game Over", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        Application.Restart();
+                        Environment.Exit(0);
+                    }
+                    else
+                    {
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    var winner = "O";
+
+                    var result = MessageBox.Show("Congratulations! " + "Player " + winner + " wins.\n" + "\nWould you like to play again?", "Game Over", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        Application.Restart();
+                        Environment.Exit(0);
+                    }
+                    else
+                    {
+                        this.Close();
+                    }
+                }
+            }
+
+            //Diagonal Condition
+            if (((richTextBox1.Text == richTextBox5.Text) && (richTextBox5.Text == richTextBox9.Text) && (richTextBox5.Text != "")) || ((richTextBox3.Text == richTextBox5.Text) && (richTextBox5.Text == richTextBox7.Text) && (richTextBox5.Text != "")))
+            {
+                if ((playerturn % 2) == 0)
+                {
+                    var winner = "X";
+
+                    var result = MessageBox.Show("Congratulations! " + "Player " + winner + " wins.\n" + "\nWould you like to play again?", "Game Over", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        Application.Restart();
+                        Environment.Exit(0); //this finally fixes the bug where application.restart opens the program twice in SOME conditions. 
+                    }
+                    else
+                    {
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    var winner = "O";
+
+                    var result = MessageBox.Show("Congratulations! " + "Player " + winner + " wins.\n" + "\nWould you like to play again?", "Game Over", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        Application.Restart();
+                        Environment.Exit(0);
+                    }
+                    else
+                    {
+                        this.Close();
+                    }
+                }
+            }
+            //Draw Condition
+            if ((richTextBox1.Text != "") && (richTextBox2.Text != "") && (richTextBox3.Text != "") && (richTextBox4.Text != "") && (richTextBox5.Text != "") && (richTextBox6.Text != "") && (richTextBox7.Text != "") && (richTextBox8.Text != "") && (richTextBox9.Text != ""))   //really janky code. I know there's a better way to check all textboxes using the foreach command, but I couldm't make it work yet.
+            {
+                var result = MessageBox.Show("It's a draw!\n" + "\nBetter luck next time.\n" + "\nWould you like to play again?", "Good Game", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    Application.Restart();
+                    Environment.Exit(0);
+                }
+                else
+                {
+                    this.Close();
+                }
+            }
+
         }
 
         private void AI()
         {
-            string AIplayer = " O";
-            if ((playerturn % 2) == 0)
+            if (isSinglePlayer == true)
             {
-                AIplayer = " X";
-                if (richTextBox5.Text == "")
+                string AIplayer = " O";
+                if ((playerturn % 2) == 0)
                 {
-                    richTextBox5.Text = AIplayer;
-                    richTextBox5.Font = new Font(richTextBox5.Font.FontFamily, 30, FontStyle.Bold);
+                    AIplayer = " X";
+                    if (richTextBox5.Text == "")
+                    {
+                        richTextBox5.Text = AIplayer;
+                        richTextBox5.Font = new Font(richTextBox5.Font.FontFamily, 30, FontStyle.Bold);
+                        button14.Enabled = false;
+                    }
+                    else
+                    {
+                        if (richTextBox2.Text == "")
+                        {
+                            richTextBox2.Text = AIplayer;
+                            richTextBox2.Font = new Font(richTextBox2.Font.FontFamily, 30, FontStyle.Bold);
+                            button17.Enabled = false;
+                        }
+                        else
+                        {
+                            if (richTextBox1.Text == "")
+                            {
+                                richTextBox1.Text = AIplayer;
+                                richTextBox1.Font = new Font(richTextBox1.Font.FontFamily, 30, FontStyle.Bold);
+                                button18.Enabled = false;
+                            }
+                            else
+                            {
+                                if (richTextBox7.Text == "")
+                                {
+                                    richTextBox7.Text = AIplayer;
+                                    richTextBox7.Font = new Font(richTextBox7.Font.FontFamily, 30, FontStyle.Bold);
+                                    button12.Enabled = false;
+                                }
+                                else
+                                {
+                                    if (richTextBox3.Text == "")
+                                    {
+                                        richTextBox3.Text = AIplayer;
+                                        richTextBox3.Font = new Font(richTextBox3.Font.FontFamily, 30, FontStyle.Bold);
+                                        button16.Enabled = false;
+                                    }
+                                    else
+                                    {
+                                        if (richTextBox4.Text == "")
+                                        {
+                                            richTextBox4.Text = AIplayer;
+                                            richTextBox4.Font = new Font(richTextBox4.Font.FontFamily, 30, FontStyle.Bold);
+                                            button15.Enabled = false;
+                                        }
+                                        else
+                                        {
+                                            if (richTextBox6.Text == "")
+                                            {
+                                                richTextBox6.Text = AIplayer;
+                                                richTextBox6.Font = new Font(richTextBox6.Font.FontFamily, 30, FontStyle.Bold);
+                                                button13.Enabled = false;
+                                            }
+                                            else
+                                            {
+                                                if (richTextBox9.Text == "")
+                                                {
+                                                    richTextBox9.Text = AIplayer;
+                                                    richTextBox9.Font = new Font(richTextBox9.Font.FontFamily, 30, FontStyle.Bold);
+                                                    button10.Enabled = false;
+                                                }
+                                                else
+                                                {
+                                                    if (richTextBox8.Text == "")
+                                                    {
+                                                        richTextBox8.Text = AIplayer;
+                                                        richTextBox8.Font = new Font(richTextBox8.Font.FontFamily, 30, FontStyle.Bold);
+                                                        button11.Enabled = false;
+                                                    }
+
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
                 else
                 {
-                    if (richTextBox2.Text == "")
+                    if (richTextBox5.Text == "")
                     {
-                        richTextBox2.Text = AIplayer;
-                        richTextBox2.Font = new Font(richTextBox2.Font.FontFamily, 30, FontStyle.Bold);
+                        richTextBox5.Text = AIplayer;
+                        richTextBox5.Font = new Font(richTextBox5.Font.FontFamily, 30, FontStyle.Bold);
+                        button5.Enabled = false;
                     }
                     else
                     {
@@ -343,34 +511,39 @@ namespace Tic_Tac_Toe
                         {
                             richTextBox1.Text = AIplayer;
                             richTextBox1.Font = new Font(richTextBox1.Font.FontFamily, 30, FontStyle.Bold);
+                            button1.Enabled = false;
                         }
                         else
                         {
-                            if (richTextBox7.Text == "")
+                            if (richTextBox8.Text == "")
                             {
-                                richTextBox7.Text = AIplayer;
-                                richTextBox7.Font = new Font(richTextBox7.Font.FontFamily, 30, FontStyle.Bold);
+                                richTextBox8.Text = AIplayer;
+                                richTextBox8.Font = new Font(richTextBox8.Font.FontFamily, 30, FontStyle.Bold);
+                                button8.Enabled = false;
                             }
                             else
                             {
-                                if (richTextBox3.Text == "")
+                                if (richTextBox6.Text == "")
                                 {
-                                    richTextBox3.Text = AIplayer;
-                                    richTextBox3.Font = new Font(richTextBox3.Font.FontFamily, 30, FontStyle.Bold);
+                                    richTextBox6.Text = AIplayer;
+                                    richTextBox6.Font = new Font(richTextBox6.Font.FontFamily, 30, FontStyle.Bold);
+                                    button6.Enabled = false;
                                 }
                                 else
                                 {
-                                    if (richTextBox4.Text == "")
+                                    if (richTextBox3.Text == "")
                                     {
-                                        richTextBox4.Text = AIplayer;
-                                        richTextBox4.Font = new Font(richTextBox4.Font.FontFamily, 30, FontStyle.Bold);
+                                        richTextBox3.Text = AIplayer;
+                                        richTextBox3.Font = new Font(richTextBox3.Font.FontFamily, 30, FontStyle.Bold);
+                                        button3.Enabled = false;
                                     }
                                     else
                                     {
-                                        if (richTextBox6.Text == "")
+                                        if (richTextBox4.Text == "")
                                         {
-                                            richTextBox6.Text = AIplayer;
-                                            richTextBox6.Font = new Font(richTextBox6.Font.FontFamily, 30, FontStyle.Bold);
+                                            richTextBox4.Text = AIplayer;
+                                            richTextBox4.Font = new Font(richTextBox4.Font.FontFamily, 30, FontStyle.Bold);
+                                            button4.Enabled = false;
                                         }
                                         else
                                         {
@@ -378,88 +551,26 @@ namespace Tic_Tac_Toe
                                             {
                                                 richTextBox9.Text = AIplayer;
                                                 richTextBox9.Font = new Font(richTextBox9.Font.FontFamily, 30, FontStyle.Bold);
+                                                button9.Enabled = false;
                                             }
                                             else
                                             {
-                                                if (richTextBox9.Text == "")
+                                                if (richTextBox7.Text == "")
                                                 {
-                                                    richTextBox8.Text = AIplayer;
-                                                    richTextBox8.Font = new Font(richTextBox8.Font.FontFamily, 30, FontStyle.Bold);
+                                                    richTextBox7.Text = AIplayer;
+                                                    richTextBox7.Font = new Font(richTextBox7.Font.FontFamily, 30, FontStyle.Bold);
+                                                    button7.Enabled = false;
                                                 }
-
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            else
-            {
-                if (richTextBox5.Text == "")
-                {
-                    richTextBox5.Text = AIplayer;
-                    richTextBox5.Font = new Font(richTextBox5.Font.FontFamily, 30, FontStyle.Bold);
-                }
-                else
-                {
-                    if (richTextBox1.Text == "")
-                    {
-                        richTextBox1.Text = AIplayer;
-                        richTextBox1.Font = new Font(richTextBox1.Font.FontFamily, 30, FontStyle.Bold);
-                    }
-                    else
-                    {
-                        if (richTextBox8.Text == "")
-                        {
-                            richTextBox8.Text = AIplayer;
-                            richTextBox8.Font = new Font(richTextBox8.Font.FontFamily, 30, FontStyle.Bold);
-                        }
-                        else
-                        {
-                            if (richTextBox6.Text == "")
-                            {
-                                richTextBox6.Text = AIplayer;
-                                richTextBox6.Font = new Font(richTextBox6.Font.FontFamily, 30, FontStyle.Bold);
-                            }
-                            else
-                            {
-                                if (richTextBox3.Text == "")
-                                {
-                                    richTextBox3.Text = AIplayer;
-                                    richTextBox3.Font = new Font(richTextBox3.Font.FontFamily, 30, FontStyle.Bold);
-                                }
-                                else
-                                {
-                                    if (richTextBox4.Text == "")
-                                    {
-                                        richTextBox4.Text = AIplayer;
-                                        richTextBox4.Font = new Font(richTextBox4.Font.FontFamily, 30, FontStyle.Bold);
-                                    }
-                                    else
-                                    {
-                                        if (richTextBox9.Text == "")
-                                        {
-                                            richTextBox9.Text = AIplayer;
-                                            richTextBox9.Font = new Font(richTextBox9.Font.FontFamily, 30, FontStyle.Bold);
-                                        }
-                                        else
-                                        {
-                                            if (richTextBox7.Text == "")
-                                            {
-                                                richTextBox7.Text = AIplayer;
-                                                richTextBox7.Font = new Font(richTextBox7.Font.FontFamily, 30, FontStyle.Bold);
-                                            }
-                                            else
-                                            {
-                                                if (richTextBox2.Text == "")
+                                                else
                                                 {
-                                                    richTextBox2.Text = AIplayer;
-                                                    richTextBox2.Font = new Font(richTextBox2.Font.FontFamily, 30, FontStyle.Bold);
-                                                }
+                                                    if (richTextBox2.Text == "")
+                                                    {
+                                                        richTextBox2.Text = AIplayer;
+                                                        richTextBox2.Font = new Font(richTextBox2.Font.FontFamily, 30, FontStyle.Bold);
+                                                        button2.Enabled = false;
+                                                    }
 
+                                                }
                                             }
                                         }
                                     }
@@ -468,9 +579,11 @@ namespace Tic_Tac_Toe
                         }
                     }
                 }
+                Wincondition();
+                TurnDeterminer();
             }
-            Wincondition();
-            TurnDeterminer();
+            
         }
+
     }
 }

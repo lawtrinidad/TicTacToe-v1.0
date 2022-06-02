@@ -71,7 +71,7 @@
             // button1
             // 
             this.button1.CausesValidation = false;
-            this.button1.Location = new System.Drawing.Point(163, 141);
+            this.button1.Location = new System.Drawing.Point(177, 141);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(23, 23);
             this.button1.TabIndex = 4;
@@ -82,7 +82,7 @@
             // button2
             // 
             this.button2.CausesValidation = false;
-            this.button2.Location = new System.Drawing.Point(245, 141);
+            this.button2.Location = new System.Drawing.Point(259, 141);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(23, 23);
             this.button2.TabIndex = 5;
@@ -93,7 +93,7 @@
             // button3
             // 
             this.button3.CausesValidation = false;
-            this.button3.Location = new System.Drawing.Point(328, 141);
+            this.button3.Location = new System.Drawing.Point(342, 141);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(23, 23);
             this.button3.TabIndex = 6;
@@ -104,7 +104,7 @@
             // button4
             // 
             this.button4.CausesValidation = false;
-            this.button4.Location = new System.Drawing.Point(163, 232);
+            this.button4.Location = new System.Drawing.Point(177, 232);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(23, 23);
             this.button4.TabIndex = 7;
@@ -115,7 +115,7 @@
             // button5
             // 
             this.button5.CausesValidation = false;
-            this.button5.Location = new System.Drawing.Point(245, 232);
+            this.button5.Location = new System.Drawing.Point(259, 232);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(23, 23);
             this.button5.TabIndex = 8;
@@ -126,7 +126,7 @@
             // button6
             // 
             this.button6.CausesValidation = false;
-            this.button6.Location = new System.Drawing.Point(328, 232);
+            this.button6.Location = new System.Drawing.Point(342, 232);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(23, 23);
             this.button6.TabIndex = 9;
@@ -137,7 +137,7 @@
             // button7
             // 
             this.button7.CausesValidation = false;
-            this.button7.Location = new System.Drawing.Point(163, 328);
+            this.button7.Location = new System.Drawing.Point(177, 328);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(23, 23);
             this.button7.TabIndex = 10;
@@ -148,7 +148,7 @@
             // button8
             // 
             this.button8.CausesValidation = false;
-            this.button8.Location = new System.Drawing.Point(245, 328);
+            this.button8.Location = new System.Drawing.Point(259, 328);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(23, 23);
             this.button8.TabIndex = 11;
@@ -159,7 +159,7 @@
             // button9
             // 
             this.button9.CausesValidation = false;
-            this.button9.Location = new System.Drawing.Point(328, 328);
+            this.button9.Location = new System.Drawing.Point(342, 328);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(23, 23);
             this.button9.TabIndex = 12;
@@ -169,6 +169,8 @@
             // 
             // richTextBox1
             // 
+            this.richTextBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.richTextBox1.Enabled = false;
             this.richTextBox1.Location = new System.Drawing.Point(159, 76);
             this.richTextBox1.Multiline = false;
             this.richTextBox1.Name = "richTextBox1";
@@ -180,6 +182,8 @@
             // 
             // richTextBox2
             // 
+            this.richTextBox2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.richTextBox2.Enabled = false;
             this.richTextBox2.Location = new System.Drawing.Point(241, 76);
             this.richTextBox2.Multiline = false;
             this.richTextBox2.Name = "richTextBox2";
@@ -191,6 +195,8 @@
             // 
             // richTextBox3
             // 
+            this.richTextBox3.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.richTextBox3.Enabled = false;
             this.richTextBox3.Location = new System.Drawing.Point(324, 76);
             this.richTextBox3.Multiline = false;
             this.richTextBox3.Name = "richTextBox3";
@@ -202,6 +208,8 @@
             // 
             // richTextBox4
             // 
+            this.richTextBox4.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.richTextBox4.Enabled = false;
             this.richTextBox4.Location = new System.Drawing.Point(159, 169);
             this.richTextBox4.Multiline = false;
             this.richTextBox4.Name = "richTextBox4";
@@ -213,6 +221,8 @@
             // 
             // richTextBox5
             // 
+            this.richTextBox5.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.richTextBox5.Enabled = false;
             this.richTextBox5.Location = new System.Drawing.Point(241, 169);
             this.richTextBox5.Multiline = false;
             this.richTextBox5.Name = "richTextBox5";
@@ -224,6 +234,8 @@
             // 
             // richTextBox6
             // 
+            this.richTextBox6.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.richTextBox6.Enabled = false;
             this.richTextBox6.Location = new System.Drawing.Point(324, 169);
             this.richTextBox6.Multiline = false;
             this.richTextBox6.Name = "richTextBox6";
@@ -235,6 +247,8 @@
             // 
             // richTextBox7
             // 
+            this.richTextBox7.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.richTextBox7.Enabled = false;
             this.richTextBox7.Location = new System.Drawing.Point(159, 261);
             this.richTextBox7.Multiline = false;
             this.richTextBox7.Name = "richTextBox7";
@@ -246,6 +260,8 @@
             // 
             // richTextBox8
             // 
+            this.richTextBox8.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.richTextBox8.Enabled = false;
             this.richTextBox8.Location = new System.Drawing.Point(241, 261);
             this.richTextBox8.Multiline = false;
             this.richTextBox8.Name = "richTextBox8";
@@ -257,6 +273,8 @@
             // 
             // richTextBox9
             // 
+            this.richTextBox9.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.richTextBox9.Enabled = false;
             this.richTextBox9.Location = new System.Drawing.Point(324, 261);
             this.richTextBox9.Multiline = false;
             this.richTextBox9.Name = "richTextBox9";
@@ -269,7 +287,7 @@
             // button10
             // 
             this.button10.CausesValidation = false;
-            this.button10.Location = new System.Drawing.Point(361, 328);
+            this.button10.Location = new System.Drawing.Point(342, 328);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(23, 23);
             this.button10.TabIndex = 30;
@@ -280,7 +298,7 @@
             // button11
             // 
             this.button11.CausesValidation = false;
-            this.button11.Location = new System.Drawing.Point(278, 328);
+            this.button11.Location = new System.Drawing.Point(259, 328);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(23, 23);
             this.button11.TabIndex = 29;
@@ -291,7 +309,7 @@
             // button12
             // 
             this.button12.CausesValidation = false;
-            this.button12.Location = new System.Drawing.Point(196, 328);
+            this.button12.Location = new System.Drawing.Point(177, 328);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(23, 23);
             this.button12.TabIndex = 28;
@@ -302,7 +320,7 @@
             // button13
             // 
             this.button13.CausesValidation = false;
-            this.button13.Location = new System.Drawing.Point(361, 232);
+            this.button13.Location = new System.Drawing.Point(342, 232);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(23, 23);
             this.button13.TabIndex = 27;
@@ -313,7 +331,7 @@
             // button14
             // 
             this.button14.CausesValidation = false;
-            this.button14.Location = new System.Drawing.Point(278, 232);
+            this.button14.Location = new System.Drawing.Point(259, 232);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(23, 23);
             this.button14.TabIndex = 26;
@@ -324,7 +342,7 @@
             // button15
             // 
             this.button15.CausesValidation = false;
-            this.button15.Location = new System.Drawing.Point(196, 232);
+            this.button15.Location = new System.Drawing.Point(177, 232);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(23, 23);
             this.button15.TabIndex = 25;
@@ -335,7 +353,7 @@
             // button16
             // 
             this.button16.CausesValidation = false;
-            this.button16.Location = new System.Drawing.Point(361, 141);
+            this.button16.Location = new System.Drawing.Point(342, 141);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(23, 23);
             this.button16.TabIndex = 24;
@@ -346,7 +364,7 @@
             // button17
             // 
             this.button17.CausesValidation = false;
-            this.button17.Location = new System.Drawing.Point(278, 141);
+            this.button17.Location = new System.Drawing.Point(259, 141);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(23, 23);
             this.button17.TabIndex = 23;
@@ -357,7 +375,7 @@
             // button18
             // 
             this.button18.CausesValidation = false;
-            this.button18.Location = new System.Drawing.Point(196, 141);
+            this.button18.Location = new System.Drawing.Point(177, 141);
             this.button18.Name = "button18";
             this.button18.Size = new System.Drawing.Size(23, 23);
             this.button18.TabIndex = 22;
@@ -369,7 +387,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(547, 389);
+            this.Controls.Add(this.button9);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button12);
@@ -388,15 +416,6 @@
             this.Controls.Add(this.richTextBox3);
             this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Tic Tac Toe";
