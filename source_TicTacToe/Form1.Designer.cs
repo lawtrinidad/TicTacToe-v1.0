@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -56,13 +57,19 @@
             this.button16 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button_Credits = new System.Windows.Forms.Button();
+            this.button_Statistics = new System.Windows.Forms.Button();
+            this.button_NewGame = new System.Windows.Forms.Button();
+            this.button_Quit = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("hooge 05_55", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(143, 19);
+            this.label1.Location = new System.Drawing.Point(67, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(259, 40);
             this.label1.TabIndex = 3;
@@ -71,7 +78,7 @@
             // button1
             // 
             this.button1.CausesValidation = false;
-            this.button1.Location = new System.Drawing.Point(177, 141);
+            this.button1.Location = new System.Drawing.Point(104, 193);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(23, 23);
             this.button1.TabIndex = 4;
@@ -82,7 +89,7 @@
             // button2
             // 
             this.button2.CausesValidation = false;
-            this.button2.Location = new System.Drawing.Point(259, 141);
+            this.button2.Location = new System.Drawing.Point(186, 193);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(23, 23);
             this.button2.TabIndex = 5;
@@ -93,7 +100,7 @@
             // button3
             // 
             this.button3.CausesValidation = false;
-            this.button3.Location = new System.Drawing.Point(342, 141);
+            this.button3.Location = new System.Drawing.Point(269, 193);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(23, 23);
             this.button3.TabIndex = 6;
@@ -104,7 +111,7 @@
             // button4
             // 
             this.button4.CausesValidation = false;
-            this.button4.Location = new System.Drawing.Point(177, 232);
+            this.button4.Location = new System.Drawing.Point(104, 284);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(23, 23);
             this.button4.TabIndex = 7;
@@ -115,7 +122,7 @@
             // button5
             // 
             this.button5.CausesValidation = false;
-            this.button5.Location = new System.Drawing.Point(259, 232);
+            this.button5.Location = new System.Drawing.Point(186, 284);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(23, 23);
             this.button5.TabIndex = 8;
@@ -126,7 +133,7 @@
             // button6
             // 
             this.button6.CausesValidation = false;
-            this.button6.Location = new System.Drawing.Point(342, 232);
+            this.button6.Location = new System.Drawing.Point(269, 284);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(23, 23);
             this.button6.TabIndex = 9;
@@ -137,7 +144,7 @@
             // button7
             // 
             this.button7.CausesValidation = false;
-            this.button7.Location = new System.Drawing.Point(177, 328);
+            this.button7.Location = new System.Drawing.Point(104, 380);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(23, 23);
             this.button7.TabIndex = 10;
@@ -148,7 +155,7 @@
             // button8
             // 
             this.button8.CausesValidation = false;
-            this.button8.Location = new System.Drawing.Point(259, 328);
+            this.button8.Location = new System.Drawing.Point(186, 380);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(23, 23);
             this.button8.TabIndex = 11;
@@ -159,7 +166,7 @@
             // button9
             // 
             this.button9.CausesValidation = false;
-            this.button9.Location = new System.Drawing.Point(342, 328);
+            this.button9.Location = new System.Drawing.Point(269, 380);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(23, 23);
             this.button9.TabIndex = 12;
@@ -171,7 +178,7 @@
             // 
             this.richTextBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.richTextBox1.Enabled = false;
-            this.richTextBox1.Location = new System.Drawing.Point(159, 76);
+            this.richTextBox1.Location = new System.Drawing.Point(86, 128);
             this.richTextBox1.Multiline = false;
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
@@ -184,7 +191,7 @@
             // 
             this.richTextBox2.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.richTextBox2.Enabled = false;
-            this.richTextBox2.Location = new System.Drawing.Point(241, 76);
+            this.richTextBox2.Location = new System.Drawing.Point(168, 128);
             this.richTextBox2.Multiline = false;
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.ReadOnly = true;
@@ -197,7 +204,7 @@
             // 
             this.richTextBox3.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.richTextBox3.Enabled = false;
-            this.richTextBox3.Location = new System.Drawing.Point(324, 76);
+            this.richTextBox3.Location = new System.Drawing.Point(251, 128);
             this.richTextBox3.Multiline = false;
             this.richTextBox3.Name = "richTextBox3";
             this.richTextBox3.ReadOnly = true;
@@ -210,7 +217,7 @@
             // 
             this.richTextBox4.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.richTextBox4.Enabled = false;
-            this.richTextBox4.Location = new System.Drawing.Point(159, 169);
+            this.richTextBox4.Location = new System.Drawing.Point(86, 221);
             this.richTextBox4.Multiline = false;
             this.richTextBox4.Name = "richTextBox4";
             this.richTextBox4.ReadOnly = true;
@@ -223,7 +230,7 @@
             // 
             this.richTextBox5.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.richTextBox5.Enabled = false;
-            this.richTextBox5.Location = new System.Drawing.Point(241, 169);
+            this.richTextBox5.Location = new System.Drawing.Point(168, 221);
             this.richTextBox5.Multiline = false;
             this.richTextBox5.Name = "richTextBox5";
             this.richTextBox5.ReadOnly = true;
@@ -236,7 +243,7 @@
             // 
             this.richTextBox6.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.richTextBox6.Enabled = false;
-            this.richTextBox6.Location = new System.Drawing.Point(324, 169);
+            this.richTextBox6.Location = new System.Drawing.Point(251, 221);
             this.richTextBox6.Multiline = false;
             this.richTextBox6.Name = "richTextBox6";
             this.richTextBox6.ReadOnly = true;
@@ -249,7 +256,7 @@
             // 
             this.richTextBox7.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.richTextBox7.Enabled = false;
-            this.richTextBox7.Location = new System.Drawing.Point(159, 261);
+            this.richTextBox7.Location = new System.Drawing.Point(86, 313);
             this.richTextBox7.Multiline = false;
             this.richTextBox7.Name = "richTextBox7";
             this.richTextBox7.ReadOnly = true;
@@ -262,7 +269,7 @@
             // 
             this.richTextBox8.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.richTextBox8.Enabled = false;
-            this.richTextBox8.Location = new System.Drawing.Point(241, 261);
+            this.richTextBox8.Location = new System.Drawing.Point(168, 313);
             this.richTextBox8.Multiline = false;
             this.richTextBox8.Name = "richTextBox8";
             this.richTextBox8.ReadOnly = true;
@@ -275,7 +282,7 @@
             // 
             this.richTextBox9.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.richTextBox9.Enabled = false;
-            this.richTextBox9.Location = new System.Drawing.Point(324, 261);
+            this.richTextBox9.Location = new System.Drawing.Point(251, 313);
             this.richTextBox9.Multiline = false;
             this.richTextBox9.Name = "richTextBox9";
             this.richTextBox9.ReadOnly = true;
@@ -287,7 +294,7 @@
             // button10
             // 
             this.button10.CausesValidation = false;
-            this.button10.Location = new System.Drawing.Point(342, 328);
+            this.button10.Location = new System.Drawing.Point(269, 380);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(23, 23);
             this.button10.TabIndex = 30;
@@ -298,7 +305,7 @@
             // button11
             // 
             this.button11.CausesValidation = false;
-            this.button11.Location = new System.Drawing.Point(259, 328);
+            this.button11.Location = new System.Drawing.Point(186, 380);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(23, 23);
             this.button11.TabIndex = 29;
@@ -309,7 +316,7 @@
             // button12
             // 
             this.button12.CausesValidation = false;
-            this.button12.Location = new System.Drawing.Point(177, 328);
+            this.button12.Location = new System.Drawing.Point(104, 380);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(23, 23);
             this.button12.TabIndex = 28;
@@ -320,7 +327,7 @@
             // button13
             // 
             this.button13.CausesValidation = false;
-            this.button13.Location = new System.Drawing.Point(342, 232);
+            this.button13.Location = new System.Drawing.Point(269, 284);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(23, 23);
             this.button13.TabIndex = 27;
@@ -331,7 +338,7 @@
             // button14
             // 
             this.button14.CausesValidation = false;
-            this.button14.Location = new System.Drawing.Point(259, 232);
+            this.button14.Location = new System.Drawing.Point(186, 284);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(23, 23);
             this.button14.TabIndex = 26;
@@ -342,7 +349,7 @@
             // button15
             // 
             this.button15.CausesValidation = false;
-            this.button15.Location = new System.Drawing.Point(177, 232);
+            this.button15.Location = new System.Drawing.Point(104, 284);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(23, 23);
             this.button15.TabIndex = 25;
@@ -353,7 +360,7 @@
             // button16
             // 
             this.button16.CausesValidation = false;
-            this.button16.Location = new System.Drawing.Point(342, 141);
+            this.button16.Location = new System.Drawing.Point(269, 193);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(23, 23);
             this.button16.TabIndex = 24;
@@ -364,7 +371,7 @@
             // button17
             // 
             this.button17.CausesValidation = false;
-            this.button17.Location = new System.Drawing.Point(259, 141);
+            this.button17.Location = new System.Drawing.Point(186, 193);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(23, 23);
             this.button17.TabIndex = 23;
@@ -375,7 +382,7 @@
             // button18
             // 
             this.button18.CausesValidation = false;
-            this.button18.Location = new System.Drawing.Point(177, 141);
+            this.button18.Location = new System.Drawing.Point(104, 193);
             this.button18.Name = "button18";
             this.button18.Size = new System.Drawing.Size(23, 23);
             this.button18.TabIndex = 22;
@@ -383,12 +390,66 @@
             this.button18.UseVisualStyleBackColor = true;
             this.button18.Click += new System.EventHandler(this.button18_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.button_Quit);
+            this.panel1.Controls.Add(this.button_Credits);
+            this.panel1.Controls.Add(this.button_Statistics);
+            this.panel1.Controls.Add(this.button_NewGame);
+            this.panel1.Location = new System.Drawing.Point(394, -6);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(147, 489);
+            this.panel1.TabIndex = 31;
+            // 
+            // button_Credits
+            // 
+            this.button_Credits.Location = new System.Drawing.Point(20, 439);
+            this.button_Credits.Name = "button_Credits";
+            this.button_Credits.Size = new System.Drawing.Size(82, 23);
+            this.button_Credits.TabIndex = 2;
+            this.button_Credits.Text = "About";
+            this.button_Credits.UseVisualStyleBackColor = true;
+            this.button_Credits.Click += new System.EventHandler(this.button_Credits_Click);
+            // 
+            // button_Statistics
+            // 
+            this.button_Statistics.Location = new System.Drawing.Point(20, 84);
+            this.button_Statistics.Name = "button_Statistics";
+            this.button_Statistics.Size = new System.Drawing.Size(82, 23);
+            this.button_Statistics.TabIndex = 1;
+            this.button_Statistics.Text = "Statistics";
+            this.button_Statistics.UseVisualStyleBackColor = true;
+            this.button_Statistics.Click += new System.EventHandler(this.button_Leaderboard_Click);
+            // 
+            // button_NewGame
+            // 
+            this.button_NewGame.Location = new System.Drawing.Point(20, 45);
+            this.button_NewGame.Name = "button_NewGame";
+            this.button_NewGame.Size = new System.Drawing.Size(82, 23);
+            this.button_NewGame.TabIndex = 0;
+            this.button_NewGame.Text = "New Game";
+            this.button_NewGame.UseVisualStyleBackColor = true;
+            this.button_NewGame.Click += new System.EventHandler(this.button_NewGame_Click);
+            // 
+            // button_Quit
+            // 
+            this.button_Quit.Location = new System.Drawing.Point(20, 397);
+            this.button_Quit.Name = "button_Quit";
+            this.button_Quit.Size = new System.Drawing.Size(82, 23);
+            this.button_Quit.TabIndex = 3;
+            this.button_Quit.Text = "Quit";
+            this.button_Quit.UseVisualStyleBackColor = true;
+            this.button_Quit.Click += new System.EventHandler(this.button_Quit_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(547, 389);
+            this.ClientSize = new System.Drawing.Size(516, 478);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
@@ -417,9 +478,12 @@
             this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Tic Tac Toe";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -454,5 +518,10 @@
         private Button button16;
         private Button button17;
         private Button button18;
+        private Panel panel1;
+        private Button button_Credits;
+        private Button button_Statistics;
+        private Button button_NewGame;
+        private Button button_Quit;
     }
 }

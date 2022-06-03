@@ -4,6 +4,9 @@ namespace Tic_Tac_Toe
     {
         int playerturn = 0; //determines visible buttons, turn-selection for AI in Single-Player Mode, and win condition message.
         bool isSinglePlayer = false;    //is for disabling or enabling AI to respond to every button click.
+        int isAvictory = 3; //for deciding which stat to record
+        bool isAdraw = false;
+
         public Form1()
         {
             InitializeComponent();
@@ -34,6 +37,57 @@ namespace Tic_Tac_Toe
         }
 
         //WARNING: This code is "WET". Will update once I get better at coding. Sorry.
+
+        private void recordStatistics()
+        {
+            if (isSinglePlayer == true) //makes sure only wins and losses from single-player mode is recorded
+            {
+                if (File.Exists(@"C:\Users\Public\Documents\TicTacToe\statistics.txt") == false)
+                {
+                    System.IO.Directory.CreateDirectory(@"C:\Users\Public\Documents\TicTacToe");
+                    StreamWriter createfile;
+                    createfile = File.CreateText(@"C:\Users\Public\Documents\TicTacToe\statistics.txt");
+                    createfile.WriteLine("0\r" + "0\r" + "0\r");
+                    createfile.Close();
+                }
+
+                StreamReader statistics;
+                statistics = File.OpenText(@"C:\Users\Public\Documents\TicTacToe\statistics.txt");
+                string wins = char.ToString(statistics.ReadLine().Take(1).First());
+                string loss = char.ToString(statistics.ReadLine().Take(1).First());
+                string draw = char.ToString(statistics.ReadLine().Take(1).First());
+                statistics.Close();
+
+                if (isAdraw == true)
+                {
+                    StreamWriter drawfile;
+                    int drawcount = (int.Parse(draw)) + 1;
+                    drawfile = File.CreateText(@"C:\Users\Public\Documents\TicTacToe\statistics.txt");
+                    drawfile.WriteLine(wins + "\n" + loss + "\n" + drawcount + "\n");
+                    drawfile.Close();
+                }
+
+                if (isAvictory == 1)
+                {
+                    StreamWriter winfile;
+                    int wincount = (int.Parse(wins)) + 1;
+                    winfile = File.CreateText(@"C:\Users\Public\Documents\TicTacToe\statistics.txt");
+                    winfile.WriteLine(wincount + "\n" + loss + "\n" + draw + "\n");
+                    winfile.Close();
+                }
+
+                if (isAvictory == 0)
+                {
+                    StreamWriter lossfile;
+                    int losscount = (int.Parse(loss)) + 1;
+                    lossfile = File.CreateText(@"C:\Users\Public\Documents\TicTacToe\statistics.txt");
+                    lossfile.WriteLine(wins + "\n" + losscount + "\n" + draw + "\n");
+                    lossfile.Close();
+                }
+            }
+
+        }
+
 
         private void TurnDeterminer()
         {
@@ -93,6 +147,7 @@ namespace Tic_Tac_Toe
             button1.Enabled = false;
             button18.Enabled = false;
             Wincondition();
+            DrawCondition();
             TurnDeterminer();
             AI();
         }
@@ -104,6 +159,7 @@ namespace Tic_Tac_Toe
             button2.Enabled = false;
             button17.Enabled = false;
             Wincondition();
+            DrawCondition();
             TurnDeterminer();
             AI();
         }
@@ -115,6 +171,7 @@ namespace Tic_Tac_Toe
             button1.Enabled = false;
             button18.Enabled = false;
             Wincondition();
+            DrawCondition();
             TurnDeterminer();
             AI();
         }
@@ -127,6 +184,7 @@ namespace Tic_Tac_Toe
             button2.Enabled = false;
             button17.Enabled = false;
             Wincondition();
+            DrawCondition();
             TurnDeterminer();
             AI();
         }
@@ -138,6 +196,7 @@ namespace Tic_Tac_Toe
             button3.Enabled = false;
             button16.Enabled = false;
             Wincondition();
+            DrawCondition();
             TurnDeterminer();
             AI();
         }
@@ -149,6 +208,7 @@ namespace Tic_Tac_Toe
             button3.Enabled = false;
             button16.Enabled = false;
             Wincondition();
+            DrawCondition();
             TurnDeterminer();
             AI();
         }
@@ -160,6 +220,7 @@ namespace Tic_Tac_Toe
             button4.Enabled = false;
             button15.Enabled = false;
             Wincondition();
+            DrawCondition();
             TurnDeterminer();
             AI();
         }
@@ -171,6 +232,7 @@ namespace Tic_Tac_Toe
             button4.Enabled = false;
             button15.Enabled = false;
             Wincondition();
+            DrawCondition();
             TurnDeterminer();
             AI();
         }
@@ -182,6 +244,7 @@ namespace Tic_Tac_Toe
             button5.Enabled = false;
             button14.Enabled = false;
             Wincondition();
+            DrawCondition();
             TurnDeterminer();
             AI();
         }
@@ -193,6 +256,7 @@ namespace Tic_Tac_Toe
             button5.Enabled = false;
             button14.Enabled = false;
             Wincondition();
+            DrawCondition();
             TurnDeterminer();
             AI();
         }
@@ -204,6 +268,7 @@ namespace Tic_Tac_Toe
             button6.Enabled = false;
             button13.Enabled = false;
             Wincondition();
+            DrawCondition();
             TurnDeterminer();
             AI();
         }
@@ -215,6 +280,7 @@ namespace Tic_Tac_Toe
             button6.Enabled = false;
             button13.Enabled = false;
             Wincondition();
+            DrawCondition();
             TurnDeterminer();
             AI();
         }
@@ -226,6 +292,7 @@ namespace Tic_Tac_Toe
             button7.Enabled = false;
             button12.Enabled = false;
             Wincondition();
+            DrawCondition();
             TurnDeterminer();
             AI();
         }
@@ -237,6 +304,7 @@ namespace Tic_Tac_Toe
             button7.Enabled = false;
             button12.Enabled = false;
             Wincondition();
+            DrawCondition();
             TurnDeterminer();
             AI();
         }
@@ -248,6 +316,7 @@ namespace Tic_Tac_Toe
             button8.Enabled = false;
             button11.Enabled = false;
             Wincondition();
+            DrawCondition();
             TurnDeterminer();
             AI();
         }
@@ -259,6 +328,7 @@ namespace Tic_Tac_Toe
             button8.Enabled = false;
             button11.Enabled = false;
             Wincondition();
+            DrawCondition();
             TurnDeterminer();
             AI();
         }
@@ -270,6 +340,7 @@ namespace Tic_Tac_Toe
             button9.Enabled = false;
             button10.Enabled = false;
             Wincondition();
+            DrawCondition();
             TurnDeterminer();
             AI();
         }
@@ -281,20 +352,23 @@ namespace Tic_Tac_Toe
             button9.Enabled = false;
             button10.Enabled = false;
             Wincondition();
+            DrawCondition();
             TurnDeterminer();
             AI();
         }
 
         private void Wincondition()
         {
+
             //Horizontal Condition
             if (((richTextBox1.Text == richTextBox2.Text) && (richTextBox2.Text == richTextBox3.Text) && (richTextBox2.Text != "")) || ((richTextBox4.Text == richTextBox5.Text) && (richTextBox5.Text == richTextBox6.Text) && (richTextBox5.Text != "")) || ((richTextBox7.Text == richTextBox8.Text) && (richTextBox8.Text == richTextBox9.Text) && (richTextBox8.Text != "")))
             {
-                //old condition:    if (((richTextBox1.Text == richTextBox2.Text) && (richTextBox2.Text == richTextBox3.Text) && (richTextBox2.Text != "") && (richTextBox1.Text == " X")) || ((richTextBox4.Text == richTextBox5.Text) && (richTextBox5.Text == richTextBox6.Text) && (richTextBox5.Text != "") && (richTextBox4.Text == " X")) || ((richTextBox7.Text == richTextBox8.Text) && (richTextBox8.Text == richTextBox9.Text) && (richTextBox8.Text != "") && (richTextBox7.Text == " X")))
+                isAvictory = 1;
+                recordStatistics();
+
                 if ((playerturn % 2) == 0)
                 {
                     var winner = "X";
-
                     var result = MessageBox.Show("Congratulations! " + "Player " + winner + " wins.\n" + "\nWould you like to play again?", "Game Over", MessageBoxButtons.YesNo);
                     if (result == DialogResult.Yes)
                     {
@@ -326,6 +400,9 @@ namespace Tic_Tac_Toe
             //Vertical Condition
             if (((richTextBox1.Text == richTextBox4.Text) && (richTextBox4.Text == richTextBox7.Text) && (richTextBox4.Text != "")) || ((richTextBox2.Text == richTextBox5.Text) && (richTextBox5.Text == richTextBox8.Text) && (richTextBox5.Text != "")) || ((richTextBox3.Text == richTextBox6.Text) && (richTextBox6.Text == richTextBox9.Text) && (richTextBox6.Text != "")))
             {
+                isAvictory = 1;
+                recordStatistics();
+
                 if ((playerturn % 2) == 0)
                 {
                     var winner = "X";
@@ -361,6 +438,9 @@ namespace Tic_Tac_Toe
             //Diagonal Condition
             if (((richTextBox1.Text == richTextBox5.Text) && (richTextBox5.Text == richTextBox9.Text) && (richTextBox5.Text != "")) || ((richTextBox3.Text == richTextBox5.Text) && (richTextBox5.Text == richTextBox7.Text) && (richTextBox5.Text != "")))
             {
+                isAvictory = 1;
+                recordStatistics();
+
                 if ((playerturn % 2) == 0)
                 {
                     var winner = "X";
@@ -392,9 +472,15 @@ namespace Tic_Tac_Toe
                     }
                 }
             }
+        }
+        private void DrawCondition()
+        {
             //Draw Condition
             if ((richTextBox1.Text != "") && (richTextBox2.Text != "") && (richTextBox3.Text != "") && (richTextBox4.Text != "") && (richTextBox5.Text != "") && (richTextBox6.Text != "") && (richTextBox7.Text != "") && (richTextBox8.Text != "") && (richTextBox9.Text != ""))   //really janky code. I know there's a better way to check all textboxes using the foreach command, but I couldm't make it work yet.
             {
+                isAdraw = true;
+                recordStatistics();
+
                 var result = MessageBox.Show("It's a draw!\n" + "\nBetter luck next time.\n" + "\nWould you like to play again?", "Good Game", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
@@ -406,10 +492,124 @@ namespace Tic_Tac_Toe
                     this.Close();
                 }
             }
+        }
+        private void LossCondition()
+        {
 
+            //Horizontal Condition
+            if (((richTextBox1.Text == richTextBox2.Text) && (richTextBox2.Text == richTextBox3.Text) && (richTextBox2.Text != "")) || ((richTextBox4.Text == richTextBox5.Text) && (richTextBox5.Text == richTextBox6.Text) && (richTextBox5.Text != "")) || ((richTextBox7.Text == richTextBox8.Text) && (richTextBox8.Text == richTextBox9.Text) && (richTextBox8.Text != "")))
+            {
+                isAvictory = 0;
+                recordStatistics();
+
+                if ((playerturn % 2) == 0)
+                {
+                    var winner = "X";
+                    var result = MessageBox.Show("Oh no, you lost! " + "Bot Player " + winner + " wins.\n" + "\nWould you like to play again?", "Game Over", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        Application.Restart();
+                        Environment.Exit(0);
+                    }
+                    else
+                    {
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    var winner = "O";
+
+                    var result = MessageBox.Show("Oh no, you lost! " + "Bot Player " + winner + " wins.\n" + "\nWould you like to play again?", "Game Over", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        Application.Restart();
+                        Environment.Exit(0);
+                    }
+                    else
+                    {
+                        this.Close();
+                    }
+                }
+            }
+
+            //Vertical Condition
+            if (((richTextBox1.Text == richTextBox4.Text) && (richTextBox4.Text == richTextBox7.Text) && (richTextBox4.Text != "")) || ((richTextBox2.Text == richTextBox5.Text) && (richTextBox5.Text == richTextBox8.Text) && (richTextBox5.Text != "")) || ((richTextBox3.Text == richTextBox6.Text) && (richTextBox6.Text == richTextBox9.Text) && (richTextBox6.Text != "")))
+            {
+                isAvictory = 0;
+                recordStatistics();
+
+                if ((playerturn % 2) == 0)
+                {
+                    var winner = "X";
+                    var result = MessageBox.Show("Oh no, you lost! " + "Bot Player " + winner + " wins.\n" + "\nWould you like to play again?", "Game Over", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        Application.Restart();
+                        Environment.Exit(0);
+                    }
+                    else
+                    {
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    var winner = "O";
+
+                    var result = MessageBox.Show("Oh no, you lost! " + "Bot Player " + winner + " wins.\n" + "\nWould you like to play again?", "Game Over", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        Application.Restart();
+                        Environment.Exit(0);
+                    }
+                    else
+                    {
+                        this.Close();
+                    }
+                }
+            }
+
+            //Diagonal Condition
+            if (((richTextBox1.Text == richTextBox5.Text) && (richTextBox5.Text == richTextBox9.Text) && (richTextBox5.Text != "")) || ((richTextBox3.Text == richTextBox5.Text) && (richTextBox5.Text == richTextBox7.Text) && (richTextBox5.Text != "")))
+            {
+                isAvictory = 0;
+                recordStatistics();
+
+                if ((playerturn % 2) == 0)
+                {
+                    var winner = "X";
+
+                    var result = MessageBox.Show("Oh no, you lost! " + "Bot Player " + winner + " wins.\n" + "\nWould you like to play again?", "Game Over", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        Application.Restart();
+                        Environment.Exit(0); 
+                    }
+                    else
+                    {
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    var winner = "O";
+
+                    var result = MessageBox.Show("Oh no, you lost! " + "Bot Player " + winner + " wins.\n" + "\nWould you like to play again?", "Game Over", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        Application.Restart();
+                        Environment.Exit(0);
+                    }
+                    else
+                    {
+                        this.Close();
+                    }
+                }
+            }
         }
 
-        private void AI()
+        public void AI()
         {
             if (isSinglePlayer == true)
             {
@@ -579,11 +779,47 @@ namespace Tic_Tac_Toe
                         }
                     }
                 }
-                Wincondition();
+                LossCondition();
+                DrawCondition();
                 TurnDeterminer();
             }
             
         }
 
+        private void button_NewGame_Click(object sender, EventArgs e)
+        {
+            var restartDialogBox = MessageBox.Show("Are you sure you want to start a new game?\n" + "\nAll game progress will be lost.", "", MessageBoxButtons.YesNo);
+            if (restartDialogBox == DialogResult.Yes)
+            {
+                Application.Restart();
+            }
+        }
+
+        private void button_Credits_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This game is created by:\n" + "\nJohn Lawrence E. Trinidad\n" + "\nas a first-year college student under Bachelor of Science in Computer Engineering at the Polytechnic University of the Philippines.\n" + "\n Future updates may or may not come.");
+        }
+
+        private void button_Leaderboard_Click(object sender, EventArgs e)
+        {
+            StreamReader statistics;
+            statistics = File.OpenText(@"C:\Users\Public\Documents\TicTacToe\statistics.txt");
+            string wins = char.ToString(statistics.ReadLine().Take(1).First());
+            string loss = char.ToString(statistics.ReadLine().Take(1).First());
+            string draw = char.ToString(statistics.ReadLine().Take(1).First());
+            statistics.Close();
+
+            MessageBox.Show("Wins:                                                        \n" + wins + "\n" + "\n" + "Losses:\n" + loss + "\n" + "\n" + "Draws::\n" + draw, "Single-player Stats");
+            
+        }
+
+        private void button_Quit_Click(object sender, EventArgs e)
+        {
+            var quitDialogBox = MessageBox.Show("Are you sure you want to exit?\n" + "\nAll game progress will be lost.", "", MessageBoxButtons.YesNo);
+            if (quitDialogBox == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
     }
 }
